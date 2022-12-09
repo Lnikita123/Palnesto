@@ -1,0 +1,18 @@
+.Container {
+    
+    grid-template-columns: auto auto auto auto;
+    display: grid;
+    position: relative;
+    padding: 15px;
+    cursor: default;
+    touch-action: none;
+    background: rgb(8, 15, 101);
+    width: 500px;
+    height: 500px;
+}
+
+.Container-Sub {
+    width: 106.25px;
+    height: 106.25px;
+    background-color: rgb(8, 15, 101);
+}

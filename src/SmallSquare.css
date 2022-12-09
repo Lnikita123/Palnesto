@@ -1,0 +1,31 @@
+.FillSquare {
+    display: flex;
+    background: rgb(10, 100, 31);
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-family: Pacifico, cursive;
+    text-align: center;
+    width: 100px;
+    height: 107px;
+}
+
+.EmptySquare {
+    display: none;
+    background: rgb(9, 17, 132);
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    font-size: 75px;
+    width: 107px;
+    height: 107px;
+}
