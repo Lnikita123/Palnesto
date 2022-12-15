@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SmallSquare from "./SmallSquare";
 import "./BigSquare.css";
 
@@ -6,15 +6,14 @@ function shuffle(array) {
   return [...array].sort(() => Math.random() - 0.5);
 }
 
-const squares = Array.from({ length: 16 }, (_, i) => i);
-
+const NumberSquares = Array.from({ length: 16 }, (_, i) => i);
+const alphaSquares = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L','M', 'N', 'O']
 function BigSquare() {
   const [randomSquares, setRandmoSquares] = useState([]);
-  useEffect(() => {
-    setRandmoSquares(() => shuffle(squares))
-  }, []);
+ 
 
   function moveSquare(val) {
+    // console.log(val)
     let zeroIndex = randomSquares.indexOf(0);
     let valIndex = randomSquares.indexOf(val);
 
@@ -33,8 +32,21 @@ function BigSquare() {
     temArray[valIndex] = 0;
     setRandmoSquares(() => [...temArray])
   }
+  const alphaClick = () =>{
+    setRandmoSquares(() => shuffle(alphaSquares))
+    
+  }
+  const numClick = () =>{
+    setRandmoSquares(() => shuffle(NumberSquares))
+  }
 
   return (
+    <>
+    <div className="container" style={{marginBottom:"10px"}}>
+    <button className="btn" style={{marginRight:"3px"}} onClick={numClick}>NumberSquares</button>
+    <button onClick={alphaClick}>alphaSquares</button>
+    </div>
+
     <div className="Container">
       {randomSquares.map((e, i) => {
         return (
@@ -44,6 +56,7 @@ function BigSquare() {
         );
       })}
     </div>
+    </>
   );
 }
 

@@ -2,7 +2,8 @@
 
 	class Node
 	{
-	
+	 
+    // A binary tree node has data,left child and right child
 		constructor(x) {
 			this.data = x;
 			this.left = null;
